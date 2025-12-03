@@ -1,0 +1,31 @@
+[package]
+name = "ghostdb"
+version = "0.1.0"
+edition = "2021"
+authors = ["GhostDB Team"]
+description = "A high-performance tool to anonymize SQL database dumps."
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+
+anyhow = "1.0"
+thiserror = "1.0"
+
+regex = "1.10"
+
+fake = { version = "2.9", features = ["derive"] }
+rand = "0.8"
+
+log = "0.4"
+env_logger = "0.11"
+
+dialoguer = "0.11"
+console = "0.15"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
